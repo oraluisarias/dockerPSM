@@ -1,0 +1,28 @@
+{
+    "vmPublicKeyText":"#SSH_KEY",
+    "cloudStorageContainer":"https://#DATACENTER.storage.oraclecloud.com/v1/Storage-#IDENTITY_DOMAIN/BDCSCE",
+    "cloudStorageUser":"#USERNAME",
+    "cloudStoragePassword":"#PASSWORD",
+    "cloudStorageContainerAutoGenerate":true,
+    "serviceName":"myBDCSCE",
+    "serviceDescription":"BDCSCE-GSE PSM",
+    "serviceLevel":"PAAS",
+    "meteringFrequency":"HOURLY",
+    "serviceVersion":"1.6",
+    "edition":"EE",
+    "vmUser":"opc",
+    "components":{
+        "bdcsce":{
+            "clusterSize":"1",
+            "computeOnlySlaves":"0",
+            "shape":"oc2m",
+            "hdfsStorage":"50",
+            "queueProfile":"SHARED",
+            "adminUserName":"bdcsce_admin",
+            "adminUserPassword":"Welcome321",
+            "associateDBCS":false,
+            "associateMYSQL":false,
+            "associateOEHCS":false
+        }
+    }
+}

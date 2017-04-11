@@ -1,0 +1,42 @@
+import json, requests, os, datetime
+
+TECH_endpoint = os.environ['bots_endpoint']
+DemoCentral_endpoint =  os.environ['bots_endpoint_demo_central_uat']
+
+headers = {
+	'Authorization': 'Bearer YTg3ZWJmNDctNzFhYS00ZDM4LWE5YWQtN2FlNTNlZjNlNTNm'
+}
+jobs_queue = json.loads( requests.get(DemoCentral_endpoint, headers=headers).text )
+
+print ("Starting daemon at ", datetime.datetime.now() )
+if len( jobs_queue["items"] ) == 0:
+	print "No jobs found.."
+for job in jobs_queue["items"]:
+	dev2_whitelist = ["gse00003045","gse00002320","gse00010168"]
+	try:
+	    dev2_whitelist.index( job["identity_domain"] )
+	except ValueError:
+	    print ( "dev daemon, identity domain ", job["identity_domain"], " not allowed...do nothing") 
+	else:
+		democentral_payload = { }
+		solutionbots_payload = { }
+		print ( job )
+		if job["status"] == "REQUESTED_TO_KILL":
+			solutionbots_payload["jobid"] = job["job_id"]
+			solution_recipe_job = json.loads ( requests.post( TECH_endpoint + "/kill", data=solutionbots_payload ).text )
+			democentral_payload["job_id"] = job["job_id"]
+			democentral_payload["status"] = "FAILED"
+		else:
+			solutionbots_payload["solution_profile"] = job["keyname"]
+			solutionbots_payload["identity_domain"] = job["identity_domain"]
+			solutionbots_payload["dataset_request_id"] = job["dataset_request_id"]
+			solution_recipe_job = json.loads ( requests.post( TECH_endpoint + "/run_profile", data=solutionbots_payload ).text )
+			print (solution_recipe_job)
+			democentral_payload["status"] = "RUNNING"
+			democentral_payload["job_id"] = solution_recipe_job["result"][0]["jobId"]
+			democentral_payload["timestamp"] = solution_recipe_job["result"][0]["jobId"]
+			
+		
+		democentral_update_job = requests.put( DemoCentral_endpoint + "/" + str(job["dataset_request_id"]), 
+			data=json.dumps(democentral_payload), headers=headers ).text
+		print (democentral_update_job)

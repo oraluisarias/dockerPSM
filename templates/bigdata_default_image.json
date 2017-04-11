@@ -1,0 +1,41 @@
+{
+    "vmPublicKeyText":"ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA8tfC+SBr+O7Cw+LXPjVjg0q3hOJ87Pn/xTb6tw4xe0PU5SACucgJNIonOx3jNHG2D+mn1QvAQKeE75OVuJSFUkDgcSV6MnAYk+KdSNCOco1gRCECiOHuuZPVsq1v60c5AS++hiTyfzalJQXgq/VfNerNpIUIoucug31Bj05A2p7eFI8NrCCgZr5hTAgIRhRBt77QEE/fi/XJzf81W9GfI2hpZ6+0R+62E1t3fCFq/u+u77SyrFB1+P35K5wo/mMRk/m4kSiw/w3vnZJCBgUSJ8xos4iaesxp7EeWkO5PhoS+3HRrabQELl88veHszYdDiOpi4F85LQJnCgriAfwm6w== root@demo003.us.oracle.com",
+    "cloudStorageContainer":"https://em2.storage.oraclecloud.com/v1/Storage-#IDENTITY_DOMAIN/BDCSCE",
+    "cloudStorageUser":"#USERNAME",
+    "cloudStoragePassword":"#PASSWORD",
+    "cloudStorageContainerAutoGenerate":"false",
+    "serviceName":"myBDCSCE",
+    "serviceDescription":"BDCSCE-GSE PSM",
+    "serviceLevel":"PAAS",
+    "meteringFrequency":"HOURLY",
+    "serviceVersion":"1.6",
+    "edition":"EE",
+    "vmUser":"opc",
+    "region":"",
+    "availabilityDomain":"",
+    "noRollback":"",
+    "isManaged":"",
+    "ipNetwork":"",
+    "components":{
+        "bdcsce":{
+            "clusterSize":"2",
+            "masters":"",
+            "nn_masters":"",
+            "computeAndStorageSlaves":"",
+            "computeOnlySlaves":"1",
+            "shape":"OC2m",
+            "nameNodeShape":"",
+            "hdfsStorage":"50",
+            "queueProfile":"",
+            "adminUserName":"bdcsce_admin",
+            "adminUserPassword":"Welcome321",
+            "associateDBCS":"false",
+            "associateMYSQL":"false",
+            "associateOEHCS":"false",
+            "dbcsName":"false",
+            "dbcsPDBName":"false",
+            "mysqlName":"false",
+            "oehcsName":"false"
+        }
+    }
+}

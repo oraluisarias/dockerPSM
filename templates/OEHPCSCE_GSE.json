@@ -1,0 +1,23 @@
+{
+    "serviceName":"myOEHPCS",
+    "serviceDescription":"oehpcs trial instance",
+    "vmPublicKeyText":"#SSH_KEY",
+    "vmUser":"opc",
+    "components":{
+        "kafka":{
+            "deploymentType":"Basic",
+            "shape":"oc1m",
+            "kafkaClusterSize":2,
+            "dataStorage":50,
+            "zkShape":"oc1m",
+            "zkClusterSize":1
+        },
+        "restprxy":{
+            "createRestprxy":true,
+            "restprxyShape":"oc1m",
+            "restprxyClusterSize":1,
+            "restprxyUser":"admin",
+            "restprxyPassword":"Welcome321"
+        }
+    }
+}
