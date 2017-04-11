@@ -1,5 +1,4 @@
 {
 "profileName": "BDCSCE_Standalone",
-"cleanUpServices": "ALL,SCCS!compute_images!compute_images_segments",
-"customSetupScripts": "python create_bdcsce.py ${domain}"
+"customSetupScripts": "python ${profilePath}/create_bdcsce.py ${domain}"
 }
