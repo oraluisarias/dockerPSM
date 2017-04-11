@@ -1,5 +1,0 @@
-{
-"profileName": "OCCS_Standalone",
-"cleanUpServices": "ALL,SCCS!compute_images!compute_images_segments",
-"customSetupScripts": "python create_container.py ${domain}"
-}
