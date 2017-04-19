@@ -44,7 +44,7 @@ print (psm_client.run(['/usr/bin/bash','-c',"echo '" + bigdata_imagef + "' > big
 ##print (psm_client.run( [ 'sh ','-c',"echo '" + bigdata_imagef + "' > ~/bigdata_image.json   && psm bdcsce create-service -c ~/bigdata_image.json" ] ) )
 print ("-----------------------------------------------------------------------------------------------END")
 #print (psm_client.run(['psm','bdcsce','create-service']))
-print (psm_client.run(['/usr/bin/bash','-c',"echo '" + bigdata_imagef + "' > bigdata_image.json && psm update && psm bdcsce create-service -c bigdata_image.json " ] ))
+print (psm_client.run(['/usr/bin/bash','-c',"echo '" + bigdata_imagef + "' > bigdata_image.json && psm bdcsce create-service -c bigdata_image.json " ] ))
 ##print (psm_client.run(['/usr/bin/bash','-c',"echo '" + bigdata_imagef + "' > bigdata_image.json && psm bdcsce services" ] ))
 
 print ("Finish the creation of BDCSCE Cluster")
