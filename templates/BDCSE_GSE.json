@@ -1,5 +1,4 @@
-{
-    "vmPublicKeyText":"#SSH_KEY",
+{   "vmPublicKeyText":"#SSH_KEY",
     "cloudStorageContainer":"https://#DATACENTER.storage.oraclecloud.com/v1/Storage-#IDENTITY_DOMAIN/BDCSCE",
     "cloudStorageUser":"#USERNAME",
     "cloudStoragePassword":"#PASSWORD",
