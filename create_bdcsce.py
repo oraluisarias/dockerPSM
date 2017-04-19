@@ -32,7 +32,7 @@ bigdata_imagef=bigdata_imagef.replace( "#USERNAME", USERNAME)
 bigdata_imagef=bigdata_imagef.replace( "#PASSWORD", PASSWORD)
 bigdata_imagef=bigdata_imagef.replace( "#SSH_KEY", public_keyf)
 bigdata_imagef=bigdata_imagef.replace('"','\"')
-bigdata_imagef=bigdata_imagef.rstrip().lstrip()
+bigdata_imagef=bigdata_imagef.strip().rstrip().lstrip()
 
 print bigdata_imagef
 print ("Creating BDCSCE service with PSM on:", IDENTITY_DOMAIN)
