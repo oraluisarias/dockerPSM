@@ -1,5 +1,4 @@
 {
 "profileName": "BDCSCE_Standalone",
-"customSetupScripts": "python ${profilePath}/clean_bdcsce.py ${domain}",
-"customSetupScripts": "python ${profilePath}/create_bdcsce.py ${domain}"
+"customSetupScripts": "python ${profilePath}/clean_bdcsce.py ${domain}; python ${profilePath}/create_bdcsce.py ${domain}"
 }
