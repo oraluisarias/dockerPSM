@@ -8,6 +8,7 @@ IDENTITY_DOMAIN=sys.argv[1]
 psm_client = PSM_Docker.PSM_CLIENT(IDENTITY_DOMAIN)
 print ("Start the Clean process on Identity domain: ", IDENTITY_DOMAIN)
 services_json = psm_client.run( ["psm", "bdcsce", "services"] )
+print("Output of the psm command", services_json)
 services = json.loads( services_json )
 print("This is the list of services to be deleted: ", services)
 for service in services['services']:
