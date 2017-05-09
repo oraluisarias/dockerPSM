@@ -46,7 +46,7 @@ print (psm_client.run(['/usr/bin/bash','-c',"echo '" + bigdata_imagef + "' > big
 print (psm_client.run(['/usr/bin/bash','-c',"echo '" + bigdata_imagef + "' > bigdata_image.json && psm bdcsce create-service -c bigdata_image.json " ] ))
 print ("-----------------------------------------------------------------------------------------------END")
 print ("Wait until the service is created..... " )
-time.sleep(600)
-print ("Finish the creation of BDCSCE Cluster")
+time.sleep(1000)
+print ("....... Finish the creation of BDCSCE Cluster")
 
 
