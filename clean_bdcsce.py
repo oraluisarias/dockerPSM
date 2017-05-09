@@ -10,6 +10,7 @@ print ("Start the Clean process on Identity domain: ", IDENTITY_DOMAIN)
 services_json = psm_client.run( ["psm", "bdcsce", "services"] )
 print("Output of the psm command", services_json)
 lines = services_json.replace("\n\x1b[1mWARNING\x1b[0m: A new version of psm client is available. Please run \'psm update\' to update to the latest version'","")
+
 print ("without warnign ", lines)
 services = json.loads( services_json )
 print("This is the list of services to be deleted: ", services)
