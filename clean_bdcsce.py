@@ -12,7 +12,7 @@ print("Output of the psm command", services_json)
 lines = services_json.replace("\n\x1b[1mWARNING\x1b[0m: A new version of psm client is available. Please run \'psm update\' to update to the latest version.\n","")
 
 print ("without warnign ", lines)
-services = json.loads( services_json )
+services = json.loads( lines )
 print("This is the list of services to be deleted: ", services)
 for service in services['services']:
 	print ("Deleting... ", service)
