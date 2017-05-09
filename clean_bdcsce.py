@@ -9,7 +9,7 @@ psm_client = PSM_Docker.PSM_CLIENT(IDENTITY_DOMAIN)
 print ("Start the Clean process on Identity domain: ", IDENTITY_DOMAIN)
 services_json = psm_client.run( ["psm", "bdcsce", "services"] )
 print("Output of the psm command", services_json)
-lines = services_json.replace("\n\x1b[1mWARNING\x1b[0m: A new version of psm client is available. Please run \'psm update\' to update to the latest version","")
+lines = services_json.replace("\n\x1b[1mWARNING\x1b[0m: A new version of psm client is available. Please run \'psm update\' to update to the latest version.\n","")
 
 print ("without warnign ", lines)
 services = json.loads( services_json )
