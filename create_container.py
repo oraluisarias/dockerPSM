@@ -11,9 +11,9 @@ psm_client = PSM_Docker.PSM_CLIENT(IDENTITY_DOMAIN)
 
 DATACENTER = psm_client.getDataCenterShort()
 
-services_json = psm_client.run( ["psm", "CONTAINER", "services"] )
-services = json.loads( services_json )
-print ( psm_client.run( ["psm", "log"] ) )
+#services_json = psm_client.run( ["psm", "CONTAINER", "services"] )
+#services = json.loads( services_json )
+#print ( psm_client.run( ["psm", "log"] ) )
 
 f=open(root_dir + "/templates/container_default_image.json")
 container_image = f.read()
